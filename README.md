@@ -4,15 +4,34 @@ This project focuses on learning-based wave propagation approaches for optimizin
 
 ## Datasets description
 
-you can find data folder
+The datasets used for training, simulation, and testing are available in the data folder. Below is a detailed description of each dataset:
 
-**Datasets**
-geometric_parameters_train.csv 파일은 p_u and p_l and t_d are varied from 0.05 to 1 µm in steps of 0.05 µm, resulting in a total of 2600개 조합
-simulated_TM_results.csv 파일은 The transmission spectra of 2-6 µm with 0.1 µm increments for all parameter combinations 
-geometric_parameters_test.csv 파일은  p_u and p_l and t_d are varied from 0.05 to 1 µm in steps of 0.01 µm, resulting in a total of 884736개 조합 이건 예시로 0.01 step으로 한거고 사용자 정의에 맞게 더 세밀한 조합에 대해서 결과 예측 가능함.
+### Geometric Parameters Definition
+The geometric parameters of the double-layer Au grating structure are defined as follows:  
+- **Upper grating period (p_u)**: The period of the upper grating layer.  
+- **Lower grating period (p_l)**: The period of the lower grating layer.  
+- **Dielectric spacer thickness (t_d)**: The thickness of the dielectric spacer between the grating layers.
 
-the geometric parameters of the structure are defined as follows: upper grating period (pu), lower grating period (pl) and dielectric spacer thickness (t_d). 
+![structure](data/fig%201.png)
 
-![fig 1](/data/fig 1.png)
+### 1. `geometric_parameters_train.csv`
+- This dataset contains the geometric parameters used for training the deeplearning models. It includes combinations of three parameters.
+- **Parameter Range**:  
+  - **p_u**, **p_l**, **t_d**: Vary from 0.05 µm to 1 µm.
+- **Step Size**: 0.05 µm increments.
+- **Total Combinations**: 2,600 unique parameter combinations.
+
+### 2. `simulated_TM_results.csv`
+- This file contains the simulated TM transmission spectra for each combination of geometric parameters in the training dataset.
+- **Wavelength Range**: 2–6 µm with 0.1 µm increments.
+- **Purpose**: The transmission results from this dataset are used as the ground truth for training the machine learning models.
+
+### 3. `geometric_parameters_test.csv`
+- This dataset contains a more finely tuned set of geometric parameters for testing and prediction.
+- **Parameter Range**:  
+  - **p_u**, **p_l**, **t_d**: Vary from 0.05 µm to 1 µm.
+- **Step Size**: 0.01 µm increments, allowing for more precise parameter combinations.
+- **Total Combinations**: 884,736 unique parameter combinations (using a 0.01 µm step).
+- **Usage**: This dataset is used for testing and predicting TM transmission for finer combinations of parameters, and can be customized for even more granular testing.
 
 
