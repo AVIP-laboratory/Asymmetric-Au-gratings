@@ -13,5 +13,6 @@ geometric_parameters_test.csv 파일은  p_u and p_l and t_d are varied from 0.0
 
 the geometric parameters of the structure are defined as follows: upper grating period (pu), lower grating period (pl) and dielectric spacer thickness (t_d). 
 
+![그림1](/data/그림1.png)
 
 
