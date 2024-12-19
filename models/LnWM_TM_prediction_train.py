@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 from tensorflow.keras.models import Model
 import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score
 from keras.layers import Input, Dense, Flatten, Conv2D, Conv2DTranspose, Cropping2D, Concatenate, ReLU, BatchNormalization
 
 # Load input and output data from CSV files
@@ -70,3 +71,7 @@ history = model.fit(X, output, epochs=100,batch_size=5, verbose=0)
 model.summary()
 
 model.save('file directory/LnWM_TM_predictor.h5')
+
+Y_pred = model.predict(X)
+R2_score= r2_score(output, Y_pred)
+print(R2_score)
