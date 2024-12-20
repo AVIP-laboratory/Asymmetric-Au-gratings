@@ -24,7 +24,7 @@ The geometric parameters of the double-layer Au grating structure are defined as
 ### 2. `data/simulated_TM_results.csv`
 - This file contains the simulated TM transmission spectra for each combination of geometric parameters in the training dataset.
 - **Wavelength Range**: 2–6 µm with 0.1 µm increments.
-- **Purpose**: The transmission results from this dataset are used as the ground truth for training the machine learning models.
+- **Purpose**: The transmission results from this dataset are used as the ground truth for training the deeplearning models.
 
 ### 3. `data/geometric_parameters_test.csv`
 - This dataset contains a more finely tuned set of geometric parameters for testing and prediction.
